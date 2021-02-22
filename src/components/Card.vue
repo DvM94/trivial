@@ -26,7 +26,6 @@ export default {
     }
 
     const loadCard = () => {
-      answer.value = false
       cardInfo.splice(0);
       answers.splice(0);
       fetch("https://opentdb.com/api.php?amount=1&category=9&type=multiple")
