@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <router-link to="/game"><img alt="Vue logo" src="../assets/logo.png"></router-link>
+    <router-link to="/game"><img alt="Vue logo" src="@/assets/img/logo.png"></router-link>
   </div>
 </template>
 
