@@ -1,7 +1,7 @@
 <template>
   <div v-if="!endGame">
-    <Card @answerResolved="checkAnswer"/>
-    <progress id="file" max="9" :value="progress"></progress>
+    <Card @correctAnswers="counterCorrectAnswers" @countQuestions="countQuestions" />
+    <progress id="file" max="10" :value="progress"></progress>
   </div>
   <div v-else>
     <h1>FIN DE JUEGO</h1>
@@ -18,25 +18,26 @@ export default {
     Card
   },
   setup() {
-    let progress = ref(-1);
-    let counter = ref(0)
+    let progress = ref(0);
+    let correctAnswers = ref(0);
     let endGame = ref(false);
 
-    function checkAnswer(dato){
-      if(dato.value==true) counter.value++
-      console.log(counter.value)
+    const counterCorrectAnswers = () => {
+      correctAnswers.value++
+      console.log(correctAnswers.value)
     }
 
-    const checkProgress = () => {
-      if(progress.value==9)
-        endGame.value=true
+    const countQuestions = dato => {
+      progress.value++
+      if(progress.value==10) endGame.value=true
     }
 
     return {
       progress,
-      counter,
+      correctAnswers,
       endGame,
-      checkAnswer
+      counterCorrectAnswers,
+      countQuestions
     };
   }
 }

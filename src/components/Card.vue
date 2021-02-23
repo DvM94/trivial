@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { ref, reactive, context, watch } from "vue";
+import { ref, reactive, watch } from "vue";
 export default {
   name: "Card",
   props: {},
@@ -17,7 +17,8 @@ export default {
     let cardInfo = reactive([])
     let answers = reactive([])
     let correctAnswer = ref("")
-    let answer = ref(false)
+    //let answer = ref(0)
+    let questionCounter = ref(0)
 
     const decodeHTML = (text) => {
       let txt = document.createElement("textarea")
@@ -26,6 +27,7 @@ export default {
     }
 
     const loadCard = () => {
+      questionCounter.value++
       cardInfo.splice(0);
       answers.splice(0);
       fetch("https://opentdb.com/api.php?amount=1&category=9&type=multiple")
@@ -45,16 +47,24 @@ export default {
     loadCard();
 
     const checkAnswer = (e) => {
-      if (e.target.textContent != correctAnswer.value) e.target.classList.add("wrong")
-      else answer.value=true
-      Array.prototype.slice.call(answersList.children).forEach(ans=>{
+      if (e.target.textContent == correctAnswer.value) {
+        e.target.classList.add("right")
+        context.emit("correctAnswers")
+      } else {
+        e.target.classList.add("wrong")
+        Array.from(answersList.children).forEach( ans => {
         if(ans.textContent == correctAnswer.value) ans.classList.add("right")
       })
+      }      
     }
 
-    watch(answer,()=>{
-      context.emit("answerResolved",answer)
+    watch(questionCounter, () => {
+      context.emit("countQuestions", questionCounter)
     })
+
+/*     watch(answer,()=>{
+      context.emit("answerResolved")
+    }) */
 
     return {
       cardInfo,
