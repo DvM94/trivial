@@ -1,12 +1,12 @@
 <template>
   <div v-if="!endGame" class="center">
-    <Card @questionsNumber="counterQuestions" @correctAnswer="counterRightAnswer"/>
+    <Card @questions-number="counterQuestions" @correct-answer="counterRightAnswer"/>
     <progress id="file" max="9" :value="progress"></progress>
   </div>
   <div v-else class="center">
     <h1>FIN DE JUEGO</h1>
     <Result :rightAnswers="rightAnswers"/>
-    <img src="@/assets/img/replay.png" alt="Volver a jugar" @click="replay"/>
+    <img src="/img/replay.png" alt="Volver a jugar" @click="replay" @mouseover="hover($event,'/img/replay2.png')" @mouseout="hover($event,'/img/replay.png')"/>
   </div>
 </template>
 
@@ -41,8 +41,10 @@ export default {
       endGame.value = false
     }
 
+    const hover = (e,link) => e.target.src = link
 
     return {
+      hover,
       progress,
       rightAnswers,
       endGame,

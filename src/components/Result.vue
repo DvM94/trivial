@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import {ref, onBeforeUpdate} from "vue"
+import {ref} from "vue"
 
 export default {
   name:"Result",
