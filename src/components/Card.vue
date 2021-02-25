@@ -1,7 +1,7 @@
 <template>
-  <div class="card" v-if="cardInfo.length">
+  <div class="card">
     <div class="question">
-      <p v-html="cardInfo[0].question"></p>
+      <p v-html="cardInfo[0].question" v-if="cardInfo.length"></p>
     </div>
     <div class="answers">
       <div class="bullets">
@@ -10,7 +10,7 @@
         <p>C</p>
         <p>D</p>
       </div>
-      <div @click.once="checkAnswer($event)" id="answersList">
+      <div @click.once="checkAnswer($event)" id="answersList" v-if="cardInfo.length">
         <p
           v-for="(answer, i) in answers"
           :key="i"
@@ -97,6 +97,7 @@ export default {
   padding: 25px 0;
 }
 .question {
+  min-height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,7 +173,6 @@ export default {
 img {
   display: block;
   margin: 15px auto;
-  width: 45%;
 }
 
 @media (max-width: 600px) {
@@ -214,7 +214,8 @@ img {
   }
 
   img {
-  width: 60%;
+  width: 50%;
+  max-width: 258px;
   }
 }
 </style>
