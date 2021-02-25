@@ -12,11 +12,11 @@ export default {
     rightAnswers:Number
   },
   setup(props){
-    let image = ref("/img/about.png")
+    let image = ref("/img/result0.png")
 
-    if(props.rightAnswers>8) image.value="/img/dani.png"
-    else if(props.rightAnswers>6) image.value="/img/nuria.png"
-    else if(props.rightAnswers>4) image.value="/img/home.png"
+    if(props.rightAnswers>8) image.value="/img/result3.png"
+    else if(props.rightAnswers>6) image.value="/img/result2.png"
+    else if(props.rightAnswers>4) image.value="/img/result1.png"
 
     return{
       image
