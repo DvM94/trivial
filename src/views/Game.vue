@@ -4,9 +4,8 @@
     <progress id="file" max="9" :value="progress"></progress>
   </div>
   <div v-else class="main center">
-    <h1>FIN DE JUEGO</h1>
     <Result :rightAnswers="rightAnswers"/>
-    <img src="/img/replay.png" alt="Volver a jugar" @click="replay" @mouseover="hover($event,'/img/replay2.png')" @mouseout="hover($event,'/img/replay.png')"/>
+    <img src="/img/replay.png" alt="Replay" @click="replay" class="button" @mouseover="hover($event,'/img/replay2.png')" @mouseout="hover($event,'/img/replay.png')"/>
   </div>
 </template>
 
@@ -61,6 +60,9 @@ export default {
 .main {
   width: 85%;
   max-width: 650px;
+}
+.button{
+  cursor: pointer;
 }
 
 progress {

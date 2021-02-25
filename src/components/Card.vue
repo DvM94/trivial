@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <img src="/img/next.png" alt="Siguiente pregunta" @click="loadCard" @mouseover="hover($event,'/img/next2.png')" @mouseout="hover($event,'/img/next.png')"/>
+  <img src="/img/next.png" alt="Next question" @click="loadCard" @mouseover="hover($event,'/img/next2.png')" @mouseout="hover($event,'/img/next.png')"/>
 </template>
 
 <script>
@@ -173,6 +173,7 @@ export default {
 img {
   display: block;
   margin: 15px auto;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -185,7 +186,7 @@ img {
 
     p {
       font-size: 1.1rem;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 2px;
       line-height: 25px;
     }
@@ -214,7 +215,7 @@ img {
   }
 
   img {
-  width: 50%;
+  width: 60%;
   max-width: 258px;
   }
 }

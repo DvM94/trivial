@@ -1,6 +1,6 @@
 <template>
+  <h1>Score: {{rightAnswers}}/10</h1>
   <img :src="image" alt="Resultado">
-  <p>{{rightAnswers}}/10</p>
 </template>
 
 <script>
@@ -27,5 +27,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+h1{
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  background-color: #4b72a6;
+  color: white;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 2px 2px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+}
 </style>

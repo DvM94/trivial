@@ -40,6 +40,7 @@ img{
 }
 #nav {
   position: fixed;
+  z-index: 10;
   width: 100%;
   max-width: 1000px;
   left: 50%;
