@@ -41,7 +41,7 @@ img{
 #nav {
   position: fixed;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

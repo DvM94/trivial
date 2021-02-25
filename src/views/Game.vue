@@ -1,9 +1,9 @@
 <template>
-  <div v-if="!endGame" class="center">
-    <Card @questions-number="counterQuestions" @correct-answer="counterRightAnswer"/>
+  <div v-if="!endGame" class="main center">
+    <Card @questionsNumber="counterQuestions" @correctAnswer="counterRightAnswer"/>
     <progress id="file" max="9" :value="progress"></progress>
   </div>
-  <div v-else class="center">
+  <div v-else class="main center">
     <h1>FIN DE JUEGO</h1>
     <Result :rightAnswers="rightAnswers"/>
     <img src="/img/replay.png" alt="Volver a jugar" @click="replay" @mouseover="hover($event,'/img/replay2.png')" @mouseout="hover($event,'/img/replay.png')"/>
@@ -56,6 +56,38 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+.main {
+  width: 85%;
+  max-width: 650px;
+}
+
+progress {
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+progress::-webkit-progress-bar {
+  height: 35px;
+  background-color: rgb(179, 177, 177);
+  box-shadow: 3px 3px 5px gray;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 7px 15px;
+}
+progress::-webkit-progress-value {
+  background-color: #4b72a6;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+}
+
+@media (max-width: 600px) {
+
+  progress {
+  width: 80%;
+  }
+}
 
 </style>
