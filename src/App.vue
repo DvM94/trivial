@@ -1,10 +1,23 @@
 <template>
   <div id="nav">
-    <router-link to="/"><img alt="Home" src="@/assets/img/home.png"></router-link>
-    <router-link to="/about"><img alt="About" src="@/assets/img/about.png"></router-link>
+    <router-link to="/"><img alt="Home" src=/img/home.png @mouseover="hover($event,'/img/home2.png')" @mouseout="hover($event,'/img/home.png')"></router-link>
+    <router-link to="/about"><img alt="About" src="/img/about.png" @mouseover="hover($event,'/img/about2.png')" @mouseout="hover($event,'/img/about.png')"></router-link>
   </div>
   <router-view/>
 </template>
+
+<script>
+export default {
+  setup(){
+
+    const hover = (e,link) => e.target.src = link
+
+    return{
+      hover
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
@@ -17,7 +30,7 @@
   box-sizing: border-box;
 }
 body{
-  background-image: url("./assets/img/background.jpg");
+  background-image: url("/img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

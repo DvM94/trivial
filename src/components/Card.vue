@@ -20,14 +20,14 @@
       </div>
     </div>
   </div>
-  <img src="@/assets/img/next.png" alt="Siguiente pregunta" @click="loadCard" />
+  <img src="/img/next.png" alt="Siguiente pregunta" @click="loadCard" @mouseover="hover($event,'/img/next2.png')" @mouseout="hover($event,'/img/next.png')"/>
 </template>
 
 <script>
 import { ref, reactive } from "vue";
 export default {
   name: "Card",
-  emits: ["questionsNumber", "correctAnswer"],
+  emits: ["questionsNumber","correctAnswer"],
   props: {},
   setup(props, context) {
     let cardInfo = reactive([]);
@@ -74,7 +74,10 @@ export default {
       }
     };
 
+    const hover = (e,link) => e.target.src = link
+
     return {
+      hover,
       cardInfo,
       answers,
       checkAnswer,
