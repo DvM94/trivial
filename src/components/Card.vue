@@ -54,7 +54,6 @@ export default {
             data.results[0].correct_answer
           );
           correctAnswer.value = decodeHTML(data.results[0].correct_answer);
-          console.log(correctAnswer.value);
           cardInfo.push(data.results[0]);
         });
     };
