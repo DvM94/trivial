@@ -109,7 +109,7 @@ export default {
     color: #4b72a6;
     text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     text-align: center;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     line-height: 30px;
   }
 }
