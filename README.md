@@ -21,9 +21,7 @@ La aplicación sigue los principios del diseño responsive, está en formato ord
 * HTML5, CSS3, JS
 * SCSS
 * [Trivia API](https://opentdb.com/api_config.php)
-
 * [Vue.js](https://v3.vuejs.org/)
-
 * [Composition API](https://v3.vuejs.org/api/composition-api.html)
 
 ## Colaboraciones
